@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoute");
 const authRouter = require("./routes/auth.route");
 const dotenv = require("dotenv");
+const cors = require('cors');
 dotenv.config();
 const app = express();
 app.use(express.json());
-
+app.use(cors({
+  origin: 'http://localhost:3000', // Replace with your client-side origin
+  credentials: true,
+}));
 mongoose
   .connect(process.env.MONGO)
   .then(() => {

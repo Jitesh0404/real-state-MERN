@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoute");
 const authRouter = require("./routes/auth.route");
+const cookieParser = require('cookie-parser')
 const dotenv = require("dotenv");
 const cors = require('cors');
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cookieParser())
 app.use(cors({
   origin: 'http://localhost:3000', // Replace with your client-side origin
   credentials: true,

@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoute");
 const authRouter = require("./routes/auth.route");
+const listingRouter = require("./routes/listing.route");
 const cookieParser = require('cookie-parser')
 const dotenv = require("dotenv");
 const cors = require('cors');
@@ -35,6 +36,8 @@ app.listen(3001, () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use('/api/listing',listingRouter)
+
 
 //middleware to handle error
 app.use((err, req, res, next) => {

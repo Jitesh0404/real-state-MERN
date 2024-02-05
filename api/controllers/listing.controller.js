@@ -43,9 +43,20 @@ const updateListing = async (req, res, next) => {
     next(error);
   }
 };
+const getListing = async (req, res, next) => {
+  try {
+    const listing = await Listing.findById(req.params.id);
+    console.log("get Listing : ",listing);
+    if (!listing) return next(errorHandler(404, "Listing Not Found!"));
+    res.status(200).json(listing)
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = {
   createListing,
   deleteListing,
   updateListing,
+  getListing,
 };

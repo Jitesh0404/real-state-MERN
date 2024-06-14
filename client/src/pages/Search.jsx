@@ -56,7 +56,7 @@ export default function Search() {
       setShowMore(false);
       const searchQuery = urlParams.toString();
       const res = await fetch(
-        `http://localhost:3001/api/listing/get?${searchQuery}`
+        `https://real-state-mern-4u63.onrender.com/api/listing/get?${searchQuery}`
       );
       const data = await res.json();
       if (data.length > 8) {

@@ -67,7 +67,7 @@ export default function Profile() {
     try {
       dispatch(updateUserStart());
       const res = await fetch(
-        `http://localhost:3001/api/user/update/${currentUser._id}`,
+        `https://real-state-mern-4u63.onrender.com/api/user/update/${currentUser._id}`,
         {
           method: "POST",
           headers: {
@@ -92,7 +92,7 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `http://localhost:3001/api/user/delete/${currentUser._id}`,
+        `https://real-state-mern-4u63.onrender.com/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
           credentials: "include",
@@ -111,7 +111,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch("http://localhost:3001/api/auth/signout", {
+      const res = await fetch("https://real-state-mern-4u63.onrender.com/api/auth/signout", {
         credentials: "include",
       });
       const data = await res.json();
@@ -128,7 +128,7 @@ export default function Profile() {
     try {
       setShowListingError(false);
       const response = await fetch(
-        `http://localhost:3001/api/user/listings/${currentUser._id}`,
+        `https://real-state-mern-4u63.onrender.com/api/user/listings/${currentUser._id}`,
         {
           credentials: "include",
         }
@@ -146,7 +146,7 @@ export default function Profile() {
   const handleListingDelete = async (listingId) => {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/listing/delete/${listingId}`,
+        `https://real-state-mern-4u63.onrender.com/api/listing/delete/${listingId}`,
         {
           method: "DELETE",
           credentials: "include",

@@ -17,7 +17,7 @@ function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3001/api/auth/signup", {
+      const res = await fetch("https://real-state-mern-4u63.onrender.com/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
